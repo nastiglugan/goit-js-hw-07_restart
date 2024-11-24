@@ -1,8 +1,6 @@
 import { galleryItems } from "./gallery-items.js";
 // Change code below this line
 
-console.log(galleryItems);
-
 const gallery = document.querySelector(".gallery");
 
 const markup = galleryItems
@@ -27,7 +25,8 @@ gallery.addEventListener("click", onClick);
 function onClick(evt) {
   evt.preventDefault();
 
-  if (evt.target.nodeName !== "IMG") {
+  if (!evt.target.classList.contains("gallery__image")) {
+    console.log(evt.target);
     return;
   }
 
